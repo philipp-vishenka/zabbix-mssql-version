@@ -1,8 +1,8 @@
-import mssql_connection
+from mssql_connection import get_cursor
 
 
-cursor = mssql_connection.get_cursor()
+cursor = get_cursor()
 
 cursor.execute("SELECT @@version;")
-row = cursor.fetchone()
-print(row[0])
+result = cursor.fetchone()
+print(result[0])
